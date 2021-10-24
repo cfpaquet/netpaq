@@ -13,7 +13,7 @@
 - Import CSV
 - Export CSV
 - Active Directory LDAP filters
-``
+```powershell
 {{ "{% highlight powershell " }}%}
  function Get-FriendlyOsInfo {
         param (
@@ -43,4 +43,4 @@
         }
     }
 {{ "{% endhighlight " }}%}
-``
+```
