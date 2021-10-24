@@ -8,6 +8,12 @@
 
 # PowerShell - Code Snipets
 
+- Custom Objects
+- Calculated Properties
+- Import CSV
+- Export CSV
+- Active Directory LDAP filters
+
 {{ "{% highlight powershell " }}%}  
     function Get-FriendlyOsInfo {
         param (
