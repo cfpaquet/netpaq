@@ -15,7 +15,7 @@
 - Active Directory LDAP filters
 
 {{ "{% highlight javascript " }}%}  
-    function Get-FriendlyOsInfo {
+ ``   function Get-FriendlyOsInfo {
         param (
             [switch]$BuildNumberOnly
         )
@@ -41,5 +41,5 @@
         else {
             $osInfo
         }
-    }
+    }``
 {{ "{% endhighlight " }}%}  
