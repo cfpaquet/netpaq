@@ -14,7 +14,7 @@
 - Export CSV
 - Active Directory LDAP filters
 
-{{ "{% highlight powershell " }}%}  
+{{ "{% highlight javascript " }}%}  
     function Get-FriendlyOsInfo {
         param (
             [switch]$BuildNumberOnly
