@@ -13,9 +13,9 @@
 - Import CSV
 - Export CSV
 - Active Directory LDAP filters
-
-{{ "{% highlight powershell " }}%}  
- ``   function Get-FriendlyOsInfo {
+``
+{{ "{% highlight powershell " }}%}
+ function Get-FriendlyOsInfo {
         param (
             [switch]$BuildNumberOnly
         )
@@ -41,5 +41,6 @@
         else {
             $osInfo
         }
-    }``
-{{ "{% endhighlight " }}%}  
+    }
+{{ "{% endhighlight " }}%}
+``
