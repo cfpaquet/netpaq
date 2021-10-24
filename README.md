@@ -3,9 +3,8 @@
 
 
 # PowerShell - Documents and Reference
-- Adam The Automator
-    - [PowerShell Administration](https://adamtheautomator.com/tag/powershell-administration/)
-
+- [Adam The Automator - PowerShell Administration](https://adamtheautomator.com/tag/powershell-administration/)
+- [PSCustomObject](https://pscustomobject.github.io/)
 
 # PowerShell - Code Snipets
 
