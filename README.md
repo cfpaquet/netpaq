@@ -1,6 +1,12 @@
 # PowerShell - Modules and scripts
 - ## [PowerShell Toolbox](https://github.com/cfpaquet/netpaq/projects/1)
 
+
+# PowerShell - Documents and Reference
+- Adam The Automator
+    - [PowerShell Administration](https://adamtheautomator.com/tag/powershell-administration/)
+
+
 # PowerShell - Code Snipets
 
     function Get-FriendlyOsInfo {
@@ -30,6 +36,3 @@
             $osInfo
         }
     }
-
-
-# PowerShell - Documents and Reference
