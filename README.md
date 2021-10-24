@@ -9,6 +9,7 @@
 
 # PowerShell - Code Snipets
 
+{{ "{% highlight powershell " }}%}  
     function Get-FriendlyOsInfo {
         param (
             [switch]$BuildNumberOnly
@@ -36,3 +37,4 @@
             $osInfo
         }
     }
+{{ "{% endhighlight " }}%}  
