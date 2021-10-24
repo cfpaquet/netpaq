@@ -14,7 +14,9 @@
 - Export CSV
 - Active Directory LDAP filters
 ```powershell
-{{ "{% highlight powershell " }}%}
+<#
+Returns information about the operating system in a human readable format
+#>
  function Get-FriendlyOsInfo {
         param (
             [switch]$BuildNumberOnly
@@ -42,5 +44,4 @@
             $osInfo
         }
     }
-{{ "{% endhighlight " }}%}
 ```
