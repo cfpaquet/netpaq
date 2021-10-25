@@ -41,4 +41,4 @@ Returns information about the operating system in a human readable format
             $osInfo
         }
     }
-```
+~~~
