@@ -1,7 +1,3 @@
-# PowerShell - Modules and scripts
-- ## [PowerShell Toolbox](https://github.com/cfpaquet/netpaq/projects/1)
-
-
 # PowerShell - Documents and Reference
 - [Adam The Automator - PowerShell Administration](https://adamtheautomator.com/tag/powershell-administration/)
 - [PSCustomObject](https://pscustomobject.github.io/)
@@ -13,7 +9,7 @@
 - Import CSV
 - Export CSV
 - Active Directory LDAP filters
-```powershell
+```powershell linenos
 <#
 Returns information about the operating system in a human readable format
 #>
