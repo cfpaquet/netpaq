@@ -1,32 +1,80 @@
-# N͕̰̳̏͝͡e͎̫̻͕͒͒̑̃̊͟t͙́P̠͖̠̈́͋Á̘͉̉Q̛̲̲̥́̀̔͜
-
-## PowerShell - Documents and Reference
+# PowerShell
+## Documents and Reference
 - [Adam The Automator - PowerShell Administration](https://adamtheautomator.com/tag/powershell-administration/)
 - [PSCustomObject](https://pscustomobject.github.io/)
 
-## PowerShell - Code Snipets
+## Code Snipets
 
 - Custom Objects
+
+~~~powershell
+#     ___        _                ___  _     _        _   
+#    / __|  _ __| |_ ___ _ __    / _ \| |__ (_)___ __| |_ 
+#   | (_| || (_-<  _/ _ \ '  \  | (_) | '_ \| / -_) _|  _|
+#    \___\_,_/__/\__\___/_|_|_|  \___/|_.__// \___\__|\__|
+#                                         |__/            
+
+[PSCustomObject]@{
+    PropertyName1 = 'PropertyValue'
+    PropertyArray = 'One','Two','Three'
+    PropertyNull  = $null
+}
+~~~
+
 - Calculated Properties
 - Import CSV
 - Export CSV
 - Active Directory LDAP filters
-- String formatting
+- String and number formatting
+
 ~~~powershell
-#    _  _ _____  __
-#   | || | __\ \/ /
-#   | __ | _| >  < 
-#   |_||_|___/_/\_\
-#                  
+#    _  _                 _        _            _         ___         _            _ 
+#   | || |_____ ____ _ __| |___ __(_)_ __  __ _| |  ___  |   \ ___ __(_)_ __  __ _| |
+#   | __ / -_) \ / _` / _` / -_) _| | '  \/ _` | | |___| | |) / -_) _| | '  \/ _` | |
+#   |_||_\___/_\_\__,_\__,_\___\__|_|_|_|_\__,_|_|       |___/\___\__|_|_|_|_\__,_|_|
+#                                                                                    
 
-# HEX number without heading zeroes (lowercase) ---> 0x13a                
-'0x{0:x}'  -f $decimal                  
+# Decimal to Hexadecimal
+'0x{0:X}'  -f 314    #---> 0x13A (Uppercase digits)      
+'0x{0:x}'  -f 314    #---> 0x13a (Lowercase digits)
+'0x{0:X4}' -f 314    #---> 0x013A (Minimum of 4 characters excluding the 0x prefix and uppercase digits)  
+'0x{0:x4}' -f 314    #---> 0x013a (Minimum of 4 characters excluding the 0x prefix and lowercase digits)             
 
-# HEX number with heading zeroes (uppercase) CSVDE?? ---> 0x013A
-'0x{0:X4}' -f $decimal                  
+# Hexadecimal to Decimal
+[int]'0x013A'                       #---> 314
+[int]'0x013a'                       #---> 314
+[int]'0x00000013A'                  #---> 314
+[int]'0X013A'                       #---> 314
+[Convert]::ToInt32('0x13A', 16)     #----> 314
 
-# HEX number without heading zeroes (lowercase)---> 0x013a
-'0x{0:x4}' -f $decimal 
+#     ___     _        _         ___         _            _ 
+#    / _ \ __| |_ __ _| |  ___  |   \ ___ __(_)_ __  __ _| |
+#   | (_) / _|  _/ _` | | |___| | |) / -_) _| | '  \/ _` | |
+#    \___/\__|\__\__,_|_|       |___/\___\__|_|_|_|_\__,_|_|
+#                                                           
+$octal = 0472
+$decimal = 
+
+# Decimal to Octal
+"0$([Convert]::ToString(314, 8))"   #---> 0472
+
+# Octal to Decimal
+[Convert]::ToInt32("0472", 8)       #----> 314
+[Convert]::ToInt32("472", 8)        #----> 314
+[Convert]::ToInt32(472, 8)          #----> 314
+
+
+#     ___     _        _         _  _                 _        _            _ 
+#    / _ \ __| |_ __ _| |  ___  | || |_____ ____ _ __| |___ __(_)_ __  __ _| |
+#   | (_) / _|  _/ _` | | |___| | __ / -_) \ / _` / _` / -_) _| | '  \/ _` | |
+#    \___/\__|\__\__,_|_|       |_||_\___/_\_\__,_\__,_\___\__|_|_|_|_\__,_|_|
+#                                                                             
+
+# Octal to Hexadecimal
+'0x{0:X}'  -f [Convert]::ToInt32("0472", 8)     #---> 0x13A     
+
+# Hexadecimal to Octal
+"0$([Convert]::ToString([int]'0x13A', 8))"      #---> 0472 
 ~~~
 
 
