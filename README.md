@@ -5,7 +5,7 @@
 
 ## Code Snipets
 
-- Custom Objects
+###Custom Objects
 
 ~~~powershell
 #     ___        _                ___  _     _        _   
@@ -21,11 +21,14 @@
 }
 ~~~
 
+### To-Do
 - Calculated Properties
 - Import CSV
 - Export CSV
 - Active Directory LDAP filters
-- String and number formatting
+
+
+### String and number formatting
 
 ~~~powershell
 #    _  _                 _        _            _         ___         _            _ 
