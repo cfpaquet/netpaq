@@ -78,6 +78,75 @@ $decimal =
 
 # Hexadecimal to Octal
 "0$([Convert]::ToString([int]'0x13A', 8))"      #---> 0472 
+
+
+#    ___                  _ _                            _                
+#   | _ \___ _  _ _ _  __| (_)_ _  __ _   _ _ _  _ _ __ | |__  ___ _ _ ___
+#   |   / _ \ || | ' \/ _` | | ' \/ _` | | ' \ || | '  \| '_ \/ -_) '_(_-<
+#   |_|_\___/\_,_|_||_\__,_|_|_||_\__, | |_||_\_,_|_|_|_|_.__/\___|_| /__/
+#                                 |___/                                   
+
+# Banker's rounding is the default in PowerShell for mathematical functions and casting to integer
+# .NET 4.5 -  https://docs.microsoft.com/en-us/dotnet/api/system.midpointrounding?view=netframework-4.5
+# .NET Core - https://docs.microsoft.com/en-us/dotnet/api/system.midpointrounding?view=netcore-3.1
+
+# Banker's rounding is rounding up OR down to the closest even number
+[int]3.1    #--->  3
+[int]3.5    #--->  4
+[int]3.9    #--->  4
+[int]4.1    #--->  4
+[int]4.5    #--->  4
+[int]4.9    #--->  5
+[int]-3.1   #---> -3
+[int]-3.5   #---> -4
+[int]-3.9   #---> -4
+[int]-4.1   #---> -4
+[int]-4.5   #---> -4
+[int]-4.9   #---> -5
+
+[Math]::Round(3.1)   #--->  3
+[Math]::Round(3.5)   #--->  4
+[Math]::Round(3.9)   #--->  4
+[Math]::Round(4.1)   #--->  4
+[Math]::Round(4.5)   #--->  4
+[Math]::Round(4.9)   #--->  5
+[Math]::Round(-3.1)  #---> -3
+[Math]::Round(-3.5)  #---> -4
+[Math]::Round(-3.9)  #---> -4
+[Math]::Round(-4.1)  #---> -4
+[Math]::Round(-4.5)  #---> -4
+[Math]::Round(-4.9)  #---> -5
+
+[Math]::Round(3.1, [System.MidpointRounding]::ToEven)         #--->  3
+[Math]::Round(3.5, [System.MidpointRounding]::ToEven)         #--->  4
+[Math]::Round(3.9, [System.MidpointRounding]::ToEven)         #--->  4
+[Math]::Round(4.1, [System.MidpointRounding]::ToEven)         #--->  4
+[Math]::Round(4.5, [System.MidpointRounding]::ToEven)         #--->  4
+[Math]::Round(4.9, [System.MidpointRounding]::ToEven)         #--->  5
+[Math]::Round(-3.1, [System.MidpointRounding]::ToEven)        #---> -3
+[Math]::Round(-3.5, [System.MidpointRounding]::ToEven)        #---> -4
+[Math]::Round(-3.9, [System.MidpointRounding]::ToEven)        #---> -4
+[Math]::Round(-4.1, [System.MidpointRounding]::ToEven)        #---> -4
+[Math]::Round(-4.5, [System.MidpointRounding]::ToEven)        #---> -4
+[Math]::Round(-4.9, [System.MidpointRounding]::ToEven)        #---> -5
+
+# "Traditional" rounding
+[Math]::Round(3.1, [System.MidpointRounding]::AwayFromZero)   #--->  3
+[Math]::Round(3.5, [System.MidpointRounding]::AwayFromZero)   #--->  4
+[Math]::Round(3.9, [System.MidpointRounding]::AwayFromZero)   #--->  4
+[Math]::Round(4.1, [System.MidpointRounding]::AwayFromZero)   #--->  4
+[Math]::Round(4.5, [System.MidpointRounding]::AwayFromZero)   #--->  5
+[Math]::Round(4.9, [System.MidpointRounding]::AwayFromZero)   #--->  5
+[Math]::Round(-3.1, [System.MidpointRounding]::AwayFromZero)  #---> -3
+[Math]::Round(-3.5, [System.MidpointRounding]::AwayFromZero)  #---> -4
+[Math]::Round(-3.9, [System.MidpointRounding]::AwayFromZero)  #---> -4
+[Math]::Round(-4.1, [System.MidpointRounding]::AwayFromZero)  #---> -4
+[Math]::Round(-4.5, [System.MidpointRounding]::AwayFromZero)  #---> -5
+[Math]::Round(-4.9, [System.MidpointRounding]::AwayFromZero)  #---> -5
+function round( $value  ) {
+    [Math]::Round( $value, [System.MidpointRounding]::AwayFromZero )
+}
+round(4.5)    #---> 5
 ~~~
 
 
