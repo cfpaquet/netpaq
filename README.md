@@ -183,3 +183,15 @@ function Get-FriendlyOsInfo {
         }
     }
 ~~~
+
+### Loops
+#### Types
+-foreach
+-for
+-switch
+
+#### Break
+-Terminates the overall loop processing
+
+#### Continue
+-Skips the remainder of the body of the loop and continues on with the next loop iteration.
