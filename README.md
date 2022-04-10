@@ -186,9 +186,15 @@ function Get-FriendlyOsInfo {
 
 ### Loops
 #### Types
-- foreach
-- for
-- switch
+##### foreach
+- $foreach
+
+##### switch
+- $switch
+
+##### for
+
+##### while
 
 #### Break
 - Terminates the overall loop processing
