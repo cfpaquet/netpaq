@@ -38,10 +38,11 @@
 #                                                                                    
 
 # Decimal to Hexadecimal
-'0x{0:X}'  -f 314    #---> 0x13A (Uppercase digits)      
-'0x{0:x}'  -f 314    #---> 0x13a (Lowercase digits)
-'0x{0:X4}' -f 314    #---> 0x013A (Minimum of 4 characters excluding the 0x prefix and uppercase digits)  
-'0x{0:x4}' -f 314    #---> 0x013a (Minimum of 4 characters excluding the 0x prefix and lowercase digits)             
+'0x{0:X}'  -f 314           #---> 0x13A (Uppercase digits)      
+'0x{0:x}'  -f 314           #---> 0x13a (Lowercase digits)
+'0x{0:X4}' -f 314           #---> 0x013A (Minimum of 4 characters excluding the 0x prefix and uppercase digits)  
+'0x{0:x4}' -f 314           #---> 0x013a (Minimum of 4 characters excluding the 0x prefix and lowercase digits)             
+[Convert]::ToString(314,16) #---> 13a
 
 # Hexadecimal to Decimal
 [int]'0x013A'                       #---> 314
